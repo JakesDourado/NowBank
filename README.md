@@ -1,7 +1,8 @@
 # NOW BANK
 
 
-![screen](./screen.png)
+![Captura de Tela 2021-04-04 às 15 30 25](https://user-images.githubusercontent.com/39349326/113518120-a99a7780-955a-11eb-90c2-27482d9765cf.png)
+
 
 This is a project of a fake bank web application.
 
