@@ -99,7 +99,10 @@ const Balance: React.FC<AccountProps> = (props) => {
       <CardMenuWeb>
         <CardDesc>
 
-          <header style={{ padding: '8px 25px ', color: '#307fa7' }} ><img src={currentIcon} alt="current icon" /><p>Conta</p></header>
+          <header style={{ padding: '8px 25px ' }} >
+            <img src={currentIcon} alt="current icon" />
+            <p>Conta</p>
+          </header>
           <section >
             <p>Saldo disponivel</p>
             <h3 className={`value acccount ${hide ? 'hide' : ''}`} title={contaBanco?.saldo.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}>{contaBanco?.saldo.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</h3>

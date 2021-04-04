@@ -46,26 +46,37 @@ const Extract: React.FC<ExtractData> = (props) => {
 
     return (
         <CardContainer>
-            <CardDashboard className="scroll">
-                <div className="title-container">
+            <ul>
+            <div>
+
+             <header className="title-container">
                     <img src={currentIcon} alt="current icon" />
                     <p>Últimos lançamentos</p>
-                </div>
+                </header>
+            <CardDashboard className="scroll">
+               
+
+
                 {allLaunchs.length === 0 && 'Nenhum lancamento'}
                 {allLaunchs && allLaunchs.map((launch, index) => {
                     return (
                         <div className="receipts credit-cards" key={index}>
+
                             <img src={creditCardsIcon} alt="credit cards icon" />
-                            <div className="text-items">
+
+                            <li className="text-items">
                                 <strong>{typePlans(launch.planoConta.tipoMovimento)}</strong>
                                 <p>{launch.descricao}</p>
                                 <strong>{launch.valor.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</strong>
-                            </div>
+                            </li>
+
                             <p className="date">{launch.data}</p>
+
                         </div>
                     )
                 })}
             </CardDashboard>
+            </div></ul>
         </CardContainer>
     )
 }

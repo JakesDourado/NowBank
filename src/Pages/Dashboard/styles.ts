@@ -61,6 +61,7 @@ export const DashNavBottom = styled.div`
 
 max-width: 1320px;
   display: flex;
+  justify-content: center;
     flex-wrap: wrap;
     margin: 60px auto 0 auto;
     -webkit-flex-wrap: wrap;

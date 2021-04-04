@@ -1,55 +1,100 @@
 import styled from 'styled-components'
 
 export const CardContainer = styled.div`
-  display: flex;
-  width: 99vw;
-  justify-content: center;
-  color: #3f3f3f;
-  line-height: 1.7rem;
-  font-family: 'Concert One', cursive;
+max-width: 1320px;
+margin: 0 auto;
+
+
+
+ul{
+    max-width: 1200px;
+    width: 80vw;
+    box-shadow: 5px 5px 10px rgb(211 205 205);
+    margin: 0 auto;
+    border-radius: 0 0 5px 5px  ;
+   
+  
+
+div{
+    max-width: 1200px;
+    margin: 0 auto;
+   
+    border-radius: 0 0 5px 5px  ;
+    
+    header{
+        background:#f8f8f8;
+        border-bottom: 1px solid rgba(0,0,0,.125);
+        padding: 12px 25px;
+        display: flex;
+        justify-content: space-between;
+        align-items:center;
+        color:#67676b;
+        font-weight: bold;
+        font-size: 20px;
+        border-radius: 3px 3px 0 0 ;
+        border: 1px solid rgba(0,0,0,.125);
+       
+       
+       
+       
+        }
+    p{
+        color:#67676b;
+        font-size: 1.1rem;
+        }
+}
+}
+
 `
 
 export const CardDashboard = styled.div`
-  margin: 1rem 0;
-  padding: 0.5rem;
-  width: 85%;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: #1d385699 1px 1px 4px 1px;
-  height: 300px;
-  overflow-y: scroll;
 
+
+border-radius: 0 0 3px 3px  ;
+border: 1px solid rgba(0,0,0,.125);
+padding:20px;
+height: 300px;
+
+overflow-y: scroll;
+
+div{
+    display:flex;
+    justify-content:space-between;
+
+    
+  li{
+      list-style:none;
+    width:300px;
+
+    margin:20px 0 0 10px;
+    p{
+        color:#67676b;
+        font-size: 1.2rem;
+        }
+  }
+
+   
+}
+
+
+/*
     .title {
         display: flex;
-        margin: 0.25rem 0 1rem 0;
+        //margin: 0.25rem 0 1rem 0;
         p {
-            margin: 0.5rem 0 0 0.75rem;
+           // margin: 0.5rem 0 0 0.75rem;
         }
         img {
-            margin-left: 0.5rem;
+           // margin-left: 0.5rem;
         }
     }
     p {
-        margin-left: 0.75em;
+       // margin-left: 0.75em;
     }
     h3 {
-        margin-left: 0.75em;
+       // margin-left: 0.75em;
     }
 
-    .title-container {
-        display: flex;
-        margin: 0.5rem 0 1rem 0;
-        p {
-            margin-top: 0.2rem;
-        }
-    }
-    .receipts {
-        flex: 1;
-        img {
-            margin: 0.25rem;
-        }
-        display: flex;
-        justify-content: space-around;
-        margin-bottom: 1rem;
-    }
+  
+  */
 `

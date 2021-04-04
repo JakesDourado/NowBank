@@ -34,13 +34,13 @@ export const MonthConatiner = styled.div`
 
 export const BalanceExtractContainer = styled.div`
   width: 100vw;
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: column;
-  @media only screen and (min-width: 768px) {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
+  //display: flex;
+  //flex-wrap: nowrap;
+  //flex-direction: column;
+ // @media only screen and (min-width: 768px) {
+ //   flex-direction: row;
+ //   flex-wrap: wrap;
+  //}
 `
 
 export const ContainerFilter = styled.div`

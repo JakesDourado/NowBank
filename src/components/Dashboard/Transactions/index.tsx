@@ -26,18 +26,18 @@ interface TransactionsProps extends HTMLAttributes<HTMLDivElement> {
 
 const Transactions: React.FC<TransactionsProps> = ({ isMobile }) => {
 
-  const [ contas, setContas ] = useState<Contas>()
-  const [ loaded, setLoaded ] = useState(true)
-  const [ referenceDate, setReferenceDate ] = useState(1)
+  const [contas, setContas] = useState<Contas>()
+  const [loaded, setLoaded] = useState(true)
+  const [referenceDate, setReferenceDate] = useState(1)
   // const [ lancamentos, setLancamentos ] = useState([])<any>
-  const [ chartData, setChartData ] = useState<TDataItem[]>()
+  const [chartData, setChartData] = useState<TDataItem[]>()
 
-  const user = useSelector( (state: ApplicationStore) => state.user )
-  const dashboard = useSelector(( state: ApplicationStore ) => state.dashboard)
+  const user = useSelector((state: ApplicationStore) => state.user)
+  const dashboard = useSelector((state: ApplicationStore) => state.dashboard)
 
   const dispatch = useDispatch()
 
-  const formatDate = useCallback((date:string) => {
+  const formatDate = useCallback((date: string) => {
     setLoaded(false)
 
     const d = new Date(date)
@@ -45,9 +45,9 @@ const Transactions: React.FC<TransactionsProps> = ({ isMobile }) => {
     const year = d.getFullYear()
 
     if (month.length < 2)
-        month = '0' + month
+      month = '0' + month
     if (day.length < 2)
-        day = '0' + day
+      day = '0' + day
 
     return [year, month, day].join('-')
   }, [])
@@ -62,17 +62,18 @@ const Transactions: React.FC<TransactionsProps> = ({ isMobile }) => {
         value: dt.valor.toString().startsWith('-')
           ? dt.valor.toString().substring(1)
           : dt.valor.toString()
-    }})
+      }
+    })
     setChartData(dataChart)
   }
 
   useEffect(() => {
-    if ( contas )
-      dispatch( set_transaction_data({ accounts: contas }) )
+    if (contas)
+      dispatch(set_transaction_data({ accounts: contas }))
   }, [dispatch, contas])
 
-  useEffect( ()=> {
-    if ( dashboard.transactions_data ) {
+  useEffect(() => {
+    if (dashboard.transactions_data) {
       setContas(dashboard.transactions_data.accounts)
       if (dashboard.transactions_data.accounts.contaBanco.lancamentos.length) {
         buildData(dashboard.transactions_data.accounts.contaBanco.lancamentos)
@@ -80,15 +81,15 @@ const Transactions: React.FC<TransactionsProps> = ({ isMobile }) => {
       return
     }
 
-    const getDashboardValues = async() => {
+    const getDashboardValues = async () => {
       try {
         setLoaded(false)
 
         const date = new Date()
         const newD = new Date()
-        const newDate = new Date(date.setMonth(date.getMonth()-referenceDate))
-        const dateFormated = (newD.getFullYear() + "-" + ((newD.getMonth() + 1)) + "-" + (newD.getDate() ))
-        const newDateFormated = (newDate.getFullYear() + "-" + ((newDate.getMonth() + 1)) + "-" + (newDate.getDate() ))
+        const newDate = new Date(date.setMonth(date.getMonth() - referenceDate))
+        const dateFormated = (newD.getFullYear() + "-" + ((newD.getMonth() + 1)) + "-" + (newD.getDate()))
+        const newDateFormated = (newDate.getFullYear() + "-" + ((newDate.getMonth() + 1)) + "-" + (newDate.getDate()))
         const result = await api.get(`/dashboard?fim=${formatDate(dateFormated)}&inicio=${formatDate(newDateFormated)}&login=${user?.login}`, {
           headers: {
             Authorization: user?.token,
@@ -97,32 +98,32 @@ const Transactions: React.FC<TransactionsProps> = ({ isMobile }) => {
         setContas(result.data)
         setLoaded(true)
 
-      }catch (err) {
+      } catch (err) {
         console.log(err)
       }
     }
 
     getDashboardValues()
-  }, [ referenceDate, user?.login, user?.token, formatDate, dashboard ])
+  }, [referenceDate, user?.login, user?.token, formatDate, dashboard])
 
-  const updateReference = (event:ChangeEvent<HTMLInputElement>) => {
+  const updateReference = (event: ChangeEvent<HTMLInputElement>) => {
     const value = Number(event.target.value)
     if (value > 0 && value <= 12)
       setReferenceDate(value)
   }
 
-  if ( loaded )return (
+  if (loaded) return (
     <BalanceExtractContainer>
       {/* Componente para página principal */}
 
-      <Balance contaBanco={contas?.contaBanco} contaCredito={contas?.contaCredito}/>
-{/*
+      <Balance contaBanco={contas?.contaBanco} contaCredito={contas?.contaCredito} />
+      {/*
       <ContainerFilter>
         <p>Meses para filtrar: </p>
         <input  type="number" min={1} max={12} value={referenceDate} onChange={updateReference}/>
       </ContainerFilter> */}
 
-      <Extract contaBanco={contas?.contaBanco} contaCredito={contas?.contaCredito}/>
+      <Extract contaBanco={contas?.contaBanco} contaCredito={contas?.contaCredito} />
       {/* <FiArrowLeft onClick={() => {props.func('')}}/> */}
 
       <Chart data={chartData} isMobile={isMobile} />
