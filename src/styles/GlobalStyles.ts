@@ -10,7 +10,7 @@ export default createGlobalStyle`
 
     }
     body{
-        background: #E5E5E5;
+        background: #fafafa;
         min-height: 100vh;
     }
 `

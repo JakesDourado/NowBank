@@ -33,11 +33,11 @@ Clone this repository
 
 Install all dependencies with
 
-`npm install`
+`yarn`
 
 Start the project with
 
-`npm start`
+`yarn start`
 
 There are scripts for lintint and testing, you can see more in **package.json** file.
 
