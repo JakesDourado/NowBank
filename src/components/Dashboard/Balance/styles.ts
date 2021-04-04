@@ -2,8 +2,8 @@ import styled from 'styled-components'
 
 export const BalanceContainer = styled.div`
     width:100vw;
-    margin: 20px auto 0px auto;
-    padding:20px;
+    margin: 0 auto 0px auto;
+    padding: 0 20px;
 `
 export const IdentificaUser = styled.div`
     display:flex;
@@ -67,20 +67,24 @@ export const CardDesc = styled.div`
         font-size: 1.5rem;
         }
     section{
+    
     flex: 1 1 auto;
-    height: 7.1rem;
+    height: 11.44rem;
     border-radius: 0 0 3px 3px;
     min-height: 1px;
     padding: 1.25rem;
+
         p{
             color:#67676b;
             font-size: 1rem;
+            padding:5px;
             }
         h3{
             color:#67676b;
             font-size: 1.5rem;
             display: flex;
             justify-content: flex-end;
+            padding:5px;
             }
         span{
         display:flex;

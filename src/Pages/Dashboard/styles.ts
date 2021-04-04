@@ -58,12 +58,21 @@ export const DashMain = styled.div`
 `
 
 export const DashNavBottom = styled.div`
+
+max-width: 1320px;
+  display: flex;
+    flex-wrap: wrap;
+    margin: 60px auto 0 auto;
+    -webkit-flex-wrap: wrap;
+  
+/*
+margin-top: 20px;
   width: 100vw;
   display: flex;
   justify-content: center;
   div {
       padding: 0 1rem;
-  }
+  }*/
 `
 
 export const DashNavigation = styled.div`

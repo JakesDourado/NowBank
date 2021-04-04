@@ -136,26 +136,28 @@ const Dashboard: React.FC = () => {
                   </li>
                 </ul>
               </nav>
-
+              </DashNavigation>
             <DashNavBottom className="bottom">
+
               <CardMenu isMobile={isMobile}
-                backgroundColor='#61a2d0'
+                backgroundColor='#2a73f1'
                 title='Transações'
                 onClick={() => changeComponent('Transações')} selected={currentScreen === 'Transações'} />
               <CardMenu isMobile={isMobile}
-                backgroundColor='#78DA78'
+                backgroundColor='#65b865'
                 title='Depósitos'
                 onClick={() => changeComponent('Depósitos')} selected={currentScreen === 'Depósitos'} />
               <CardMenu isMobile={isMobile}
-                backgroundColor='#FDBC7E'
+                backgroundColor='#eeaa17'
                 title='Pagamentos'
                 onClick={() => changeComponent('Pagamentos')} selected={currentScreen === 'Pagamentos'} />
               <CardMenu isMobile={isMobile}
-                backgroundColor='#A2ABFE'
+                backgroundColor='#903eee'
                 title='Planos'
                 onClick={() => changeComponent('Planos')} selected={currentScreen === 'Planos'} />
             </DashNavBottom>
-            </DashNavigation>
+
+           
 
             <DashMain>
               <main>
