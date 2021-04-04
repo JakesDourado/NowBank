@@ -24,7 +24,7 @@ import {
 } from './styles'
 
 import {
-  BtnContainerMobile, BtnIconMobile, LabelMobile, ExitBtnContainer
+  BtnContainerMobile, BtnIconMobile, LabelMobile
 } from '../../styles/DashBoardButtons'
 
 const Dashboard: React.FC = () => {
