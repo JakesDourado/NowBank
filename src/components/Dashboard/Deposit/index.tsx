@@ -16,7 +16,12 @@ import {
 import getValidationErrors from "../../../utils/getValidationErrors"
 import Loader from "../../Loader"
 
-import { Container, Card, ChangeButton } from "./style"
+import {
+  Container,
+  Card,
+  ChangeButton,
+  FormContainer
+} from "./style"
 import { LoadingContainer } from '../../../styles/Shared'
 
 const Deposit: React.FC = () => {
@@ -116,8 +121,7 @@ const Deposit: React.FC = () => {
         clearForm()
       } catch (err) {
         toast.error(
-          `Ocorreu algum erro ao tentar realizar o ${
-            invoicePayment ? "pagamento" : "depósito"
+          `Ocorreu algum erro ao tentar realizar o ${invoicePayment ? "pagamento" : "depósito"
           }`
         )
         const errors = getValidationErrors(err)
@@ -152,61 +156,67 @@ const Deposit: React.FC = () => {
 
   return (
     <>
+
+
       <Container>
         <Card>
-          <div className="container">
-            <div className="header-form">
-              <p>
-                {invoicePayment
-                  ? "Realize o pagamento da sua fatura"
-                  : "Realize o seu depósito"}
-              </p>
-              <ChangeButton onClick={() => setInvoicePayment(!invoicePayment)}>
-                <span>
-                  {invoicePayment ? "Pagamento" : "Depósito"}
-                </span>
-                <span className="material-icons">
-                  cached
-                </span>
-              </ChangeButton>
-            </div>
 
-            <Form ref={formRef} onSubmit={handleSubmit}>
-              <Input
-                name="date"
-                style={{ marginTop: 20 }}
-                value={data}
-                onChange={(e) => setData(e.target.value)}
-                type="date"
-              />
-              <Input
-                name="description"
-                value={descricao}
-                onChange={(e) => setDescricao(e.target.value)}
-                type="text"
-                placeholder="Descrição"
-              />
-              <Input
-                name="transferValue"
-                value={valor ? valor : ""}
-                onChange={handleChangeValue}
-                type="number"
-                placeholder="Valor do depósito"
-              />
 
-              {loading ? (
-                <LoadingContainer>
-                  <Loader />
-                </LoadingContainer>
-              ) : (
-                <button type="submit" className="button-Deposit">
-                  <p>
-                    {invoicePayment ? "Pagar agora" : "Depositar agora"}
-                  </p>
-                </button>
-              )}
-            </Form>
-          </div>
+          <header>
+            {invoicePayment
+              ? "Realize o pagamento da sua fatura"
+              : "Realize o seu depósito"}
+
+            <ChangeButton onClick={() => setInvoicePayment(!invoicePayment)}>
+              <span>
+                {invoicePayment ? "Pagamento" : "Depósito"}
+              </span>
+              <span className="material-icons">
+                cached
+                </span>
+            </ChangeButton>
+
+          </header>
+
+
+          <Form ref={formRef} onSubmit={handleSubmit}>
+            <Input
+              name="date"
+              style={{ marginTop: 20 }}
+              value={data}
+              onChange={(e) => setData(e.target.value)}
+              type="date"
+            />
+            <Input
+              name="transferValue"
+              value={valor ? valor : ""}
+              onChange={handleChangeValue}
+              type="number"
+              placeholder="Valor do depósito"
+            />
+            <Input
+              name="description"
+              value={descricao}
+              onChange={(e) => setDescricao(e.target.value)}
+              type="text"
+              placeholder="Descrição"
+            />
+
+
+
+            {loading ? (
+              <LoadingContainer>
+                <Loader />
+              </LoadingContainer>
+            ) : (
+              <button type="submit" className="button-Deposit">
+                <p>
+                  {invoicePayment ? "PAGAR AGORA" : "DEPOSITAR AGORA"}
+                </p>
+              </button>
+            )}
+          </Form>
+
         </Card>
       </Container>
     </>
