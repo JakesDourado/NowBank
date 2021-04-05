@@ -34,26 +34,7 @@ export const MonthConatiner = styled.div`
 
 export const BalanceExtractContainer = styled.div`
   width: 100vw;
-  //display: flex;
-  //flex-wrap: nowrap;
-  //flex-direction: column;
- // @media only screen and (min-width: 768px) {
- //   flex-direction: row;
- //   flex-wrap: wrap;
-  //}
+
 `
 
-export const ContainerFilter = styled.div`
-  display: flex;
-  justify-content: center;
-  margin-left: 1rem;
-  color: #3f3f3f;
-  line-height: 1.7rem;
-  font-family: 'Concert One', cursive;
-  input {
-    margin-left: 1rem;
-  }
-  @media only screen and (min-width: 768px) {
-    width: inherit;
-  }
-`
+

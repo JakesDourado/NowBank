@@ -54,8 +54,9 @@ border-radius: 0 0 3px 3px  ;
 border: 1px solid rgba(0,0,0,.125);
 padding:20px;
 height: 300px;
-
+border-top:none;
 overflow-y: scroll;
+background: white;
 
 div{
     display:flex;

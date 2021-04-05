@@ -33,10 +33,14 @@ const Chart: React.FC<ChartProps> = ({ data, isMobile }) => {
     <CardContainer>
       <Card>
 
-      <div>
-        <p><strong>Lançamentos</strong></p>
-      </div>
+      <header>
+        <p>
+          <strong>Lançamentos</strong>
+          </p>
+      </header>
+      
       <CardDashboard>
+
       <BarChart width={data?.length ? data.length * 70 : 300} height={250} data={data} layout="horizontal">
         <Bar stackId="id" dataKey="value" >
           {

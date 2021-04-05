@@ -103,6 +103,7 @@ const Balance: React.FC<AccountProps> = (props) => {
             <img src={currentIcon} alt="current icon" />
             <p>Conta</p>
           </header>
+          
           <section >
             <p>Saldo disponivel</p>
             <h3 className={`value acccount ${hide ? 'hide' : ''}`} title={contaBanco?.saldo.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}>{contaBanco?.saldo.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</h3>

@@ -71,7 +71,7 @@ const Extract: React.FC<ExtractData> = (props) => {
                             </li>
 
                             <p className="date">{launch.data}</p>
-
+                           
                         </div>
                     )
                 })}

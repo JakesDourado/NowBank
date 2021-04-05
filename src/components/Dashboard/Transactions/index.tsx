@@ -10,7 +10,7 @@ import { ApplicationStore } from '../../../store'
 import Loader from '../../Loader'
 import { set_transaction_data } from '../../../store/dashboard/actions'
 
-import { BalanceExtractContainer, ContainerFilter } from './style'
+import { BalanceExtractContainer} from './style'
 
 type TDataItem = {
   id: number
@@ -117,14 +117,10 @@ const Transactions: React.FC<TransactionsProps> = ({ isMobile }) => {
       {/* Componente para página principal */}
 
       <Balance contaBanco={contas?.contaBanco} contaCredito={contas?.contaCredito} />
-      {/*
-      <ContainerFilter>
-        <p>Meses para filtrar: </p>
-        <input  type="number" min={1} max={12} value={referenceDate} onChange={updateReference}/>
-      </ContainerFilter> */}
+  
 
       <Extract contaBanco={contas?.contaBanco} contaCredito={contas?.contaCredito} />
-      {/* <FiArrowLeft onClick={() => {props.func('')}}/> */}
+      
 
       <Chart data={chartData} isMobile={isMobile} />
 
