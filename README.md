@@ -6,13 +6,12 @@
 
 This is a project of a fake bank web application.
 
-You can find the [demo here](404-bank.vercel.app)
+You can find the [demo here](https://now-bank.vercel.app/)
 
 ## About:
 
-Project based on Accenture & Gama Academy's React Challenge
-Fake Bank Web Application created on top of [Douglas Morais desafio-accenture-react](https://github.com/mrdouglasmorais/desafio-accenture-react)
-
+Project based on React
+Fake Bank Web Application
 **Now Bank** communicates using REST endpoints. You can find the API Documentation [here](https://accenture-java-desafio.herokuapp.com/swagger-ui.html#/)
 
 Project written in [TypeScript](https://www.typescriptlang.org/)
