@@ -1,57 +1,65 @@
 import styled from "styled-components"
 
-export const CardContainer = styled.div`
-  width: 100vw;
-  max-height: 80vh;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
-  background: #E5E5E5;
-  padding: 73px;
+export const BtnPay = styled.div`
 `
 
-export const CardDashboard = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
 
-  padding: 42px;
-  border-radius: 10px;
+export const Container = styled.div`
+ width: 100vw;
+    display: flex;
+    justify-content:center;
+    flex-wrap: wrap;
+    margin: 20px auto;
 
-  background-color: #fdf9f9;
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 
-  .container {
-    width: 100%;
-    height: 100%;
-  }
 
-  .header-form {
-    p {
-      font-size: 2rem;
-    }
-  }
+`
+
+
+export const Card = styled.div`
+
+max-width: 1200px;
+   width: 80vw;
+    
+   margin: 20px auto;
+    box-shadow: 5px 5px 10px rgb(211 205 205);
+    background: white;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+    header{
+        background:#f8f8f8;
+        border-bottom: 1px solid rgba(0,0,0,.125);
+        padding: 12px 25px;
+        display: flex;
+        justify-content: space-between;
+        align-items:center;
+        color:#67676b;
+        font-weight: bold;
+        font-size: 20px;
+        border-radius: 3px 3px 0 0 ;
+        
+        }
+  
 
   form {
     width: 100%;
     display: block;
-    span {
-        font-family: 'Concert One', cursive;
-        color: red;
-        text-align: center;
-        margin: 0.25rem auto;
-        font-size: 0.9rem;
-    }
+    padding:20px;
+    
   }
   input {
     width: 100%;
     height: 60px;
-    margin-bottom: 10px;
+ 
     border: 0;
     border-bottom: 1px solid #9e9e9e;
-    background-color: #fdf9f9;
+    background-color: white;
+    &:hover{
+      border-bottom: 2px solid blue;
+    
+    }
   }
 
   .button-transferir {
@@ -61,8 +69,10 @@ export const CardDashboard = styled.div`
     margin-top: 30px;
     border-radius: 10px;
     color: #ffff;
-    background-color: #3c92fd;
+    background-color: #7CC5EA;
+  
   }
+  
 
   @media only screen and (max-width: 768px) {
     top: 10px;
@@ -70,3 +80,27 @@ export const CardDashboard = styled.div`
     max-height: 110vh;
   }
 `
+
+
+export const ChangeButton = styled.button`
+  width: 50%;
+    height: 40px;
+    border: 0;
+  
+    border-radius: 10px;
+    color: #ffff;
+    background-color: #7CC5EA;
+    .material-icons {
+      margin-left: 0.5rem;
+      vertical-align: middle;
+    }
+    @media only screen and (min-width: 768px) {
+      width: 25%;
+    }
+
+`
+export const FormContainer = styled.button`
+padding:20px;
+`
+
+

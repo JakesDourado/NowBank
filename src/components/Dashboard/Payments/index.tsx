@@ -1,4 +1,4 @@
-import React, {ChangeEvent, useCallback, useRef, useState } from 'react'
+import React, { ChangeEvent, useCallback, useRef, useState } from 'react'
 import { Form } from '@unform/web'
 import { FaArrowRight } from 'react-icons/fa'
 import { useDispatch, useSelector } from 'react-redux'
@@ -15,7 +15,10 @@ import { FormHandles } from '@unform/core'
 import getValidationErrors from '../../../utils/getValidationErrors'
 import Loader from '../../Loader'
 
-import { CardContainer, CardDashboard } from './styles'
+import {
+  Container,
+  Card
+} from './styles'
 
 interface PaymentsProps {
   // eslint-disable-next-line @typescript-eslint/ban-types
@@ -120,7 +123,7 @@ const Payments: React.FC<PaymentsProps> = () => {
       const errors = getValidationErrors(err)
       formRef.current?.setErrors(errors)
 
-      if ( err.response && err.response.status === 400 )
+      if (err.response && err.response.status === 400)
         toast.error('Usuário não encontrado!')
 
     } finally {
@@ -142,29 +145,38 @@ const Payments: React.FC<PaymentsProps> = () => {
   }, [])
 
   return (
-    <CardContainer>
-      <CardDashboard>
-        <Form className="header" ref={formRef} onSubmit={handleSubmit}>
-          <p>
+    <>
+      <Container>
+        <Card>
+          <header>
             Informe os dados para realizar sua transferência
-            </p>
+          </header>
+       
 
-          <Input name="receiver" value={destinatario} onChange={e => setDestinatario(e.target.value)} type="text" placeholder="Login do destinatário" />
-          <Input name="date" value={data} onChange={e => setData(e.target.value)} type="date" />
-          <Input name="description" value={descricao} onChange={e => setDescricao(e.target.value)} type="text" placeholder="Descrição" />
-          <Input name="transferValue" value={valor ? valor : ''} onChange={handleChangeValue} type="number" placeholder="Qual o valor de sua transferência?" />
+        <Form className="header" ref={formRef} onSubmit={handleSubmit}>
+         
 
-          {loading ? (
-            <Loader style={{ marginTop: 59 }} />
-          ) : (
+            <Input name="receiver" value={destinatario} onChange={e => setDestinatario(e.target.value)} type="text" placeholder="Login do destinatário" />
+            <Input name="date" value={data} onChange={e => setData(e.target.value)} type="date" />
+            <Input name="description" value={descricao} onChange={e => setDescricao(e.target.value)} type="text" placeholder="Descrição" />
+            <Input name="transferValue" value={valor ? valor : ''} onChange={handleChangeValue} type="number" placeholder="Qual o valor de sua transferência?" />
+
+            {loading ? (
+              <Loader style={{ marginTop: 59 }} />
+            ) : (
               <button className="button-transferir" type="submit">
                 <p>Transferir agora</p>
               </button>
             )}
-        </Form>
+          </Form>
+          </Card>
+      </Container>
 
-      </CardDashboard>
-    </CardContainer>
+
+          
+
+     
+    </>
   )
 
 }
